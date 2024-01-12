@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"embed"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -25,6 +26,10 @@ type apiConfig struct {
 
 //go:embed static/*
 var staticFiles embed.FS
+
+func unusedFunc() {
+	fmt.Println("Hello, nobody...")
+}
 
 func main() {
 	err := godotenv.Load(".env")
